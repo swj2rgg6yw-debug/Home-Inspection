@@ -99,6 +99,7 @@ const QuizEngine = {
     this.onTick = onTick;
     this.onTimeUp = onTimeUp;
     this.clearTimer();
+    if (this.onTick) this.onTick(this.timeRemaining);
     this.timerHandle = setInterval(() => {
       this.timeRemaining -= 1;
       if (this.onTick) this.onTick(this.timeRemaining);
